@@ -7,7 +7,7 @@ libraryDependencies ++= Seq(
   "se.jiderhamn" % "classloader-leak-test-framework" % "1.1.1"
 )
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.5.4")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.15")
 
 val `play-plugin` = project in file("../play-plugin")
 
@@ -18,8 +18,7 @@ buildInfoKeys := Seq[BuildInfoKey](
   BuildInfoKey.map(name in `play-plugin`)("playPluginName" -> _._2),
   BuildInfoKey.map(version in `play-plugin`)("playPluginVersion" -> _._2)
 )
-
-scriptedSettings
-scriptedLaunchOpts += s"-Dplugin.version=${version.value}"
+enablePlugins(ScriptedPlugin)
+scriptedLaunchOpts := Seq(s"-Dplugin.version=${version.value}")
 scriptedRun := scriptedRun.dependsOn(publishLocal in `play-plugin`).value
 scriptedBufferLog := false
