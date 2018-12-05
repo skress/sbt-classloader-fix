@@ -9,7 +9,15 @@ libraryDependencies ++= Seq(
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.15")
 
-val `play-plugin` = project in file("../play-plugin")
+//val `play-plugin` = project in file("../play-plugin")
+
+lazy val `play-plugin` = RootProject(file("../play-plugin"))
+
+val rot = (project in file("."))
+  .settings(
+    organization := "cerno"
+  ).dependsOn(`play-plugin`) 
+  
 
 enablePlugins(BuildInfoPlugin)
 buildInfoPackage := "com.github.dwickern"
