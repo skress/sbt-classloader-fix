@@ -15,7 +15,8 @@ lazy val `play-plugin` = RootProject(file("../play-plugin"))
 
 val rot = (project in file("."))
   .settings(
-    organization := "cerno"
+    organization := "cerno",
+    version := "0.6-SNAPSHOT"
   ).dependsOn(`play-plugin`) 
   
 
