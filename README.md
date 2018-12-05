@@ -1,3 +1,7 @@
+# New stuff
+
+Use `sbt publishLocal` in folder sbt-plugin to publish play and sbt plugins.
+
 # sbt-classloader-leak-prevention
 
 An sbt plugin to fix `java.lang.OutOfMemoryError: Metaspace/PermGen` errors during interactive sbt usage
