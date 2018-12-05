@@ -1,6 +1,6 @@
 # New stuff
 
-Use `sbt publishLocal` in folder sbt-plugin to publish play and sbt plugins.
+Use `sbt publishLocal` in folder `sbt-plugin/` to publish play and sbt plugins.
 
 # sbt-classloader-leak-prevention
 
