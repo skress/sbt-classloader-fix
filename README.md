@@ -16,7 +16,7 @@ An sbt plugin to fix `java.lang.OutOfMemoryError: Metaspace/PermGen` errors duri
 
 Add the following line to your `project/plugins.sbt`:
 ```
-addSbtPlugin("cerno" % "sbt-classloader-leak-prevention" % "0.5-SNAPSHOT")
+addSbtPlugin("cerno" % "sbt-classloader-leak-prevention" % "0.6-SNAPSHOT")
 ```
 
 # Configuration
