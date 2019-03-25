@@ -1,24 +1,20 @@
 sbtPlugin := true
+publishMavenStyle := true
+bintrayRepository := "maven"
+bintrayOrganization in bintray := None
 
 name := "sbt-classloader-leak-prevention"
 
 libraryDependencies ++= Seq(
-  "se.jiderhamn.classloader-leak-prevention" % "classloader-leak-prevention-core" % "2.2.0",
+  "se.jiderhamn.classloader-leak-prevention" % "classloader-leak-prevention-core" % "2.6.1",
   "se.jiderhamn" % "classloader-leak-test-framework" % "1.1.1"
 )
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.6.15")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.7.0")
 
 //val `play-plugin` = project in file("../play-plugin")
 
-lazy val `play-plugin` = RootProject(file("../play-plugin"))
-
-val rot = (project in file("."))
-  .settings(
-    organization := "cerno",
-    version := "0.6-SNAPSHOT"
-  ).dependsOn(`play-plugin`) 
-  
+lazy val `play-plugin` = (project in file("../play-plugin"))
 
 enablePlugins(BuildInfoPlugin)
 buildInfoPackage := "com.github.dwickern"

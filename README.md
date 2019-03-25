@@ -1,6 +1,10 @@
 # New stuff
 
-Use `sbt publishLocal` in folder `sbt-plugin/` to publish play and sbt plugins.
+This is a fork of a fork of ... a fork from https://github.com/dwickern/sbt-classloader-leak-prevention.
+
+This fork is compiled against Play Framework 2.7.0 and published to my bintray repository.
+
+See Usage section on how to include my published version or clone this repository and run `sbt publishLocal`.
 
 # sbt-classloader-leak-prevention
 
@@ -16,7 +20,10 @@ An sbt plugin to fix `java.lang.OutOfMemoryError: Metaspace/PermGen` errors duri
 
 Add the following line to your `project/plugins.sbt`:
 ```
-addSbtPlugin("cerno" % "sbt-classloader-leak-prevention" % "0.6-SNAPSHOT")
+resolvers ++= Seq(
+  "skress@Bintray" at "https://dl.bintray.com/skress/maven/"
+)
+addSbtPlugin("de.skress" % "sbt-classloader-leak-prevention" % "0.6")
 ```
 
 # Configuration
