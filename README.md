@@ -2,7 +2,8 @@
 
 This is a fork of a fork of ... a fork from https://github.com/dwickern/sbt-classloader-leak-prevention.
 
-This fork is compiled against Play Framework 2.7.0 and published to my bintray repository.
+This fork is compiled against Play Framework 2.8.0-RC1 and Scala 2.12, 2.13 and published to my bintray repository. (The sbt plugin
+is only compiled against Scala 2.12 as sbt 1.x itself is compiled against 2.12).
 
 See Usage section on how to include my published version or clone this repository and run `sbt publishLocal`.
 
@@ -23,7 +24,7 @@ Add the following line to your `project/plugins.sbt`:
 resolvers ++= Seq(
   "skress@Bintray" at "https://dl.bintray.com/skress/maven/"
 )
-addSbtPlugin("de.skress" % "sbt-classloader-leak-prevention" % "0.6")
+addSbtPlugin("de.skress" % "sbt-classloader-leak-prevention" % "0.8")
 ```
 
 # Configuration
@@ -50,9 +51,9 @@ To run tests:
 
 To publish locally:
 
-    sbt publishLocal
+    sbt "+ publishLocal"
 
-To publish to maven central (requires authorization):
+To publish to Bintray (requires authorization):
 
-    sbt release
+    sbt "+ publish"
     

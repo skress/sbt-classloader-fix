@@ -9,7 +9,7 @@ import se.jiderhamn.classloader.leak.prevention.ClassLoaderLeakPreventor
 object PlayFrameworkLeakPrevention extends AutoPlugin {
 
   override def trigger = allRequirements
-  override def requires = play.sbt.Play && ClassLoaderLeakPrevention
+  override def requires = play.sbt.PlayWeb && ClassLoaderLeakPrevention
   override def projectSettings = Seq(
     play.sbt.PlayInternalKeys.playReloaderClassLoader := {
       val config = ClassLoaderLeakPrevention.InternalKeys.config.value

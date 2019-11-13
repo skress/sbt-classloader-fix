@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   "se.jiderhamn" % "classloader-leak-test-framework" % "1.1.1"
 )
 
-addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.7.2")
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.8.0-RC1")
 
 //val `play-plugin` = project in file("../play-plugin")
 

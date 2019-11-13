@@ -1,4 +1,4 @@
-ThisBuild / version := "0.6"
+ThisBuild / version := "0.8"
 ThisBuild / organization := "de.skress"
 ThisBuild / description := "An sbt plugin to fix java.lang.OutOfMemoryError: Metaspace/PermGen errors during interactive sbt usage."
 // see: https://mvnrepository.com/artifact/com.github.dwickern/playframework-leak-prevention_2.11/0.4
